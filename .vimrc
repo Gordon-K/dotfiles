@@ -31,3 +31,9 @@ set showmatch       " highlight matching [{()}]
 set incsearch       " search as characters are entered
 set hlsearch        " highlight matches
 " }}}
+
+" Shortcuts {{{
+" Press F3 for timestamp like, 2016-01-25 Mo 12:44, at the cursor
+nmap <F3> i<C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR><Esc>
+imap <F3> <C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR>
+" }}}
