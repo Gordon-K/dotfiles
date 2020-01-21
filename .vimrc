@@ -14,11 +14,14 @@ Plugin 'VundleVim/Vundle.vim'   " https://github.com/VundleVim/Vundle.vim
 
 " Utility plugins
 Plugin 'preservim/nerdtree'     " https://github.com/preservim/nerdtree
+" Plugin 'powerline/powerline'    " https://github.com/powerline/powerline
+" Plugin 'powerline/fonts'        " https://github.com/powerline/fonts
+Bundle 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
 
 " Programming plugins
 Plugin 'Valloric/YouCompleteMe' " https://github.com/ycm-core/YouCompleteMe
 Plugin 'universal-ctags/ctags'  " https://github.com/universal-ctags/ctags
-Plugin 'majutsushi/tagbar'      " https://github.com/majutsushi/tagbar
+Plugin 'majutsushi/tagbar'          " https://github.com/majutsushi/tagbar
 
 " Themes
 Plugin 'morhetz/gruvbox'        " https://github.com/morhetz/gruvbox
