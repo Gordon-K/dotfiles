@@ -13,12 +13,12 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'   " https://github.com/VundleVim/Vundle.vim
 
 " Utility plugins
-Plugin 'preservim/nerdtree'         " https://github.com/preservim/nerdtree
+Plugin 'preservim/nerdtree'     " https://github.com/preservim/nerdtree
 
 " Programming plugins
 Plugin 'Valloric/YouCompleteMe' " https://github.com/ycm-core/YouCompleteMe
 Plugin 'universal-ctags/ctags'  " https://github.com/universal-ctags/ctags
-Plugin 'majutsushi/tagbar'          " https://github.com/majutsushi/tagbar
+Plugin 'majutsushi/tagbar'      " https://github.com/majutsushi/tagbar
 
 " Themes
 Plugin 'morhetz/gruvbox'        " https://github.com/morhetz/gruvbox
@@ -62,7 +62,7 @@ set showmatch       " highlight matching [{()}]
 set wildmenu        " visual autocomplete for command menu
 set incsearch       " search as characters are entered
 set hlsearch        " highlight matches
-path+=**
+set path+=**
 
 " Theme and Styling
 syntax on
