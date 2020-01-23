@@ -1,4 +1,5 @@
 set encoding=utf-8
+
 " =================================
 " Vundle Config
 " =================================
@@ -16,7 +17,9 @@ Plugin 'VundleVim/Vundle.vim'   " https://github.com/VundleVim/Vundle.vim
 Plugin 'preservim/nerdtree'     " https://github.com/preservim/nerdtree
 " Plugin 'powerline/powerline'    " https://github.com/powerline/powerline
 " Plugin 'powerline/fonts'        " https://github.com/powerline/fonts
-Bundle 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
+" Bundle 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 " Programming plugins
 Plugin 'Valloric/YouCompleteMe' " https://github.com/ycm-core/YouCompleteMe
@@ -47,7 +50,7 @@ filetype plugin indent on    " required
 " General Config
 " =================================
 set nowrap
-set showcmd         " show command in bottom bar
+" set showcmd         " show command in bottom bar
 
 " Show linenumbers
 set number
@@ -62,15 +65,18 @@ set smarttab        " enabling this will make the tab key (in insert mode) inser
 
 " Utility and search
 set showmatch       " highlight matching [{()}]
-set wildmenu        " visual autocomplete for command menu
-set incsearch       " search as characters are entered
-set hlsearch        " highlight matches
+" set wildmenu        " visual autocomplete for command menu
+" set incsearch       " search as characters are entered
+" set hlsearch        " highlight matches
 set path+=**
 
 " Theme and Styling
 syntax on
 colorscheme gruvbox
 set background=dark
+
+" Tag jumping
+command! MakeTags !ctags -R .
 
 " =================================
 " Plugin Config
@@ -90,6 +96,10 @@ let g:ycm_warning_symbol = 'W!'
 let g:ycm_semantic_triggers = {
         \   'c': [ 're!\w{2}' ]
         \ }
+
+" air-line
+let g:airline_theme='powerlineish'
+let g:airline_powerline_fonts = 1
 
 " =================================
 " Mapping Config
