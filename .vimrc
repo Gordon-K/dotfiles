@@ -26,6 +26,9 @@ Plugin 'Valloric/YouCompleteMe' " https://github.com/ycm-core/YouCompleteMe
 Plugin 'universal-ctags/ctags'  " https://github.com/universal-ctags/ctags
 Plugin 'majutsushi/tagbar'          " https://github.com/majutsushi/tagbar
 
+" LaTex
+Plugin 'lervag/vimtex'
+
 " Themes
 Plugin 'morhetz/gruvbox'        " https://github.com/morhetz/gruvbox
 
