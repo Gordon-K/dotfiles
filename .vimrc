@@ -21,6 +21,10 @@ Plugin 'preservim/nerdtree'     " https://github.com/preservim/nerdtree
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
+" Snippets
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
+
 " Programming plugins
 Plugin 'Valloric/YouCompleteMe' " https://github.com/ycm-core/YouCompleteMe
 Plugin 'universal-ctags/ctags'  " https://github.com/universal-ctags/ctags
@@ -68,9 +72,9 @@ set smarttab        " enabling this will make the tab key (in insert mode) inser
 
 " Utility and search
 set showmatch       " highlight matching [{()}]
-" set wildmenu        " visual autocomplete for command menu
-" set incsearch       " search as characters are entered
-" set hlsearch        " highlight matches
+set wildmenu        " visual autocomplete for command menu
+set incsearch       " search as characters are entered
+set hlsearch        " highlight matches
 set path+=**
 
 " Theme and Styling
@@ -103,6 +107,15 @@ let g:ycm_semantic_triggers = {
 " air-line
 let g:airline_theme='powerlineish'
 let g:airline_powerline_fonts = 1
+
+" UltiSnips
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<c-e>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
 
 " =================================
 " Mapping Config
