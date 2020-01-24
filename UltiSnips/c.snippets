@@ -1,0 +1,34 @@
+snippet inc "#include <...>" b
+#include <${1:stdio.h}>
+endsnippet
+
+snippet once "Include guard, #ifndef ... #endif" b
+#ifndef ${1:HEADER_H_}
+#define $1
+
+#endif /* end of include guard: $1 */ 
+endsnippet
+
+snippet todo "TODO Reminder" b
+// TODO: $1 (`date`, `echo $USER`)
+endsnippet
+
+snippet if "IF statement"
+if ($1)
+{
+
+}
+endsnippet
+
+snippet ifelse "IF-ELSE statement"
+if ($1)
+{
+
+}
+else
+{
+
+}
+endsnippet
+
+
