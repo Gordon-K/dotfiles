@@ -117,6 +117,11 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 
+" VimTex
+" Use SumatraPDF for live view. Need to add SumatraPDF.exe dir to $PATH and
+" create copy without the '.exe' file extension
+let g:vimtex_view_general_viewer='sumatraPDF'
+
 " =================================
 " Mapping Config
 " =================================
