@@ -9,29 +9,14 @@ filetype off                  " required
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'   " https://github.com/VundleVim/Vundle.vim
+Plugin 'VundleVim/Vundle.vim'
 
-" Utility plugins
-Plugin 'preservim/nerdtree'     " https://github.com/preservim/nerdtree
-" Plugin 'powerline/powerline'    " https://github.com/powerline/powerline
-" Plugin 'powerline/fonts'        " https://github.com/powerline/fonts
-" Bundle 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-
-" Snippets
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
-
-" Programming plugins
-Plugin 'Valloric/YouCompleteMe' " https://github.com/ycm-core/YouCompleteMe
-Plugin 'universal-ctags/ctags'  " https://github.com/universal-ctags/ctags
-Plugin 'majutsushi/tagbar'          " https://github.com/majutsushi/tagbar
-
-" LaTex
-Plugin 'lervag/vimtex'
+" Rust
+Plugin 'rust-lang/rust.vim'
 
 " Themes
 Plugin 'morhetz/gruvbox'        " https://github.com/morhetz/gruvbox
@@ -51,17 +36,19 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
-
-
 " =================================
 " General Config
 " =================================
 set nowrap
-" set showcmd         " show command in bottom bar
 
 " Show linenumbers
 set number
 set relativenumber
+
+" Show cursorline
+au WinLeave * set nocursorline nocursorcolumn
+au WinEnter * set cursorline cursorcolumn
+set cursorline
 
 " Set Proper Tabs
 set tabstop=4       " number of visual spaces per TAB
@@ -82,53 +69,4 @@ syntax on
 colorscheme gruvbox
 set background=dark
 
-" Tag jumping
-command! MakeTags !ctags -R .
 
-" =================================
-" Plugin Config
-" =================================
-" NERDTree
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
-" YouCompleteMe
-let g:ycm_max_num_candidates = 10
-let g:ycm_auto_trigger = 2
-let g:ycm_error_symbol = 'E!'
-let g:ycm_warning_symbol = 'W!'
-let g:ycm_semantic_triggers = {
-        \   'c': [ 're!\w{2}' ]
-        \ }
-
-" air-line
-let g:airline_theme='powerlineish'
-let g:airline_powerline_fonts = 1
-
-" UltiSnips
-" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<c-e>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-
-" If you want :UltiSnipsEdit to split your window.
-let g:UltiSnipsEditSplit="vertical"
-
-" VimTex
-" Use SumatraPDF for live view. Need to add SumatraPDF.exe dir to $PATH and
-" create copy without the '.exe' file extension
-let g:vimtex_view_general_viewer='sumatraPDF'
-
-" =================================
-" Mapping Config
-" =================================
-" NERDTree Toggle
-map <C-n> :NERDTreeToggle<CR>
-" Tagbar Toggle
-map <C-m> :TagbarToggle<CR>
-" Press F3 for timestamp like, 2016-01-25 Mo 12:44, at the cursor
-nmap <F3> i<C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR><Esc>
-imap <F3> <C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR>
