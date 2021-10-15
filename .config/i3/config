@@ -42,8 +42,11 @@ bindsym $mod+f fullscreen toggle
 # 2.4. Opening other applications
 #===========================================
 # Start dmenu
-bindsym $mod+d exec dmenu_run
+# bindsym $mod+d exec dmenu_run
+
 # Start rofi
+bindsym $mod+Tab exec "rofi -show window"
+bindsym $mod+d exec "rofi -show drun"
 
 #===========================================
 # 2.5. Closing windows
@@ -154,6 +157,8 @@ exec redshift -P -O 3700
 exec xrandr --output DisplayPort-1 --primary --right-of DisplayPort-2
 # Polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+# Picom
+exec_always --no-startup-id picom --config $HOME/.config/picom/picom.conf
 
 #===========================================
 # 4.19. Automatically putting workspaces on specific screens
