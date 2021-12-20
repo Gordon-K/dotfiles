@@ -1,4 +1,0 @@
-- Volume Controll
-- Network Controll
-- Screen lock
-- Display management
