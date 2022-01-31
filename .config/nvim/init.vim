@@ -1,3 +1,26 @@
+" =============================================================================
+"  _   _                 _
+" | \ | | ___  _____   _(_)_ __ ___
+" |  \| |/ _ \/ _ \ \ / / | '_ ` _ \
+" | |\  |  __/ (_) \ V /| | | | | | |
+" |_| \_|\___|\___/ \_/ |_|_| |_| |_|
+" 
+" =============================================================================
+
+" Specify a directory for plugins
+call plug#begin('~/.vim/plugged')
+  " Plugins to install
+  Plug 'morhetz/gruvbox'
+  Plug 'norcalli/nvim-colorizer.lua'
+  Plug 'lukas-reineke/indent-blankline.nvim'
+  Plug 'preservim/nerdtree'
+  Plug 'vim-airline/vim-airline'
+  Plug 'ryanoasis/vim-devicons'
+  Plug 'rust-lang/rust.vim'
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Initialize plugin system
+call plug#end()
+
 set nocompatible              " Disable compatibility to old-time vi
 set number                    " Show line numbers
 set tabstop=2                 " Set tab to 2 spaces
@@ -14,21 +37,6 @@ set mouse=v                   " Middle click paste
 set mouse=a                   " Enable mouse click
 set noswapfile                " disable creating swap file
 
-" Specify a directory for plugins
-call plug#begin('~/.vim/plugged')
-  " Plugins to install
-  Plug 'morhetz/gruvbox'
-  Plug 'norcalli/nvim-colorizer.lua'
-  Plug 'lukas-reineke/indent-blankline.nvim'
-  Plug 'preservim/nerdtree'
-  Plug 'vim-airline/vim-airline'
-  Plug 'ryanoasis/vim-devicons'
-  Plug 'rust-lang/rust.vim'
-  Plug 'neoclide/coc.nvim', {'branch': 'release'}
-  Plug 'davidhalter/jedi-vim'
-" Initialize plugin system
-call plug#end()
-
 syntax enable
 filetype plugin indent on
 
@@ -41,17 +49,13 @@ colorscheme gruvbox
 
 " nvim-colorizer
 " https://www.chrisatmachine.com/Neovim/10-adding-color/
-lua require'plug-colorizer'
+" lua require'plug-colorizer'
 
 " indent-blankline
 " https://github.com/lukas-reineke/indent-blankline.nvim
-lua require'indentation'
+" lua require'indentation'
 
 " vim-airline
 " Enable the list of buffers
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme='gruvbox'
-
-" Startup commands
-autocmd VimEnter * NERDTree
-autocmd VimEnter * wincmd p
