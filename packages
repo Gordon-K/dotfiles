@@ -1,0 +1,79 @@
+# Base
+base
+linux
+linux-firmware
+linux-headers
+amd-ucode
+archlinux-keyring
+
+# Text Editor
+neovim
+notepadqq
+
+# Shell
+zsh
+alacritty
+
+# X
+xorg-server
+xorg-xinit
+
+# WM
+awesome
+
+# Apps
+neofetch
+flameshot
+figlet
+
+# Docs
+man-db
+
+# Performance Monitoring
+htop
+
+# Web Browser
+firefox
+firefox-tridactyl
+
+# Gaming
+steam
+ttf-liberation
+wqy-zenhei
+
+# Voice Chat
+discord
+
+# Work
+libreoffice-still
+
+# Audio
+pipewire
+pipewire-pulse
+easyeffects
+pamixer
+
+# Networking
+iwd
+networkmanager
+openssh
+nmap
+wget
+
+# Dev
+base-devel
+python
+git
+
+# Bluetooth
+bluez
+bluez-utils
+
+# Display
+redshift
+brightnessctl
+picom
+
+# Filemanger
+ranger
+ueberzug
