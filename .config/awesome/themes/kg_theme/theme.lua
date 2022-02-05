@@ -24,6 +24,10 @@
     -- cyan:       = "#8ec07c"
     -- white:      = "#ebdbb2"
 
+local gears = require("gears")
+local lain  = require("lain")
+local awful = require("awful")
+local wibox = require("wibox")
 local theme_assets = require("beautiful.theme_assets")
 local xresources = require("beautiful.xresources")
 local dpi = xresources.apply_dpi
