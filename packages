@@ -13,6 +13,7 @@ notepadqq
 # Shell
 zsh
 alacritty
+tmux
 
 # X
 xorg-server
@@ -34,7 +35,6 @@ htop
 
 # Web Browser
 firefox
-firefox-tridactyl
 
 # Gaming
 steam

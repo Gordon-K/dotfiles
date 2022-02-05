@@ -1,14 +1,33 @@
----------------------------
--- Default awesome theme --
----------------------------
---
--- Standard awesome library
-local gears = require("gears")
-local awful = require("awful")
-require("awful.autofocus")
--- Widget and layout library
-local wibox = require("wibox")
+---------------------------------------------
+-- Kernel Gordon's Gruvbox AwesomeWM Theme --
+---------------------------------------------
+-- Colors (Gruvbox Dark)
+-- Primary colors
+    -- background: = "#282828"
+    -- foreground: = "#ebdbb2"
+-- Normal colors
+    -- black:      = "#282828"
+    -- red:        = "#cc241d"
+    -- green:      = "#98971a"
+    -- yellow:     = "#d79921"
+    -- blue:       = "#458588"
+    -- magenta:    = "#b16286"
+    -- cyan:       = "#689d6a"
+    -- white:      = "#a89984"
+-- Bright colors
+    -- black:      = "#928374"
+    -- red:        = "#fb4934"
+    -- green:      = "#b8bb26"
+    -- yellow:     = "#fabd2f"
+    -- blue:       = "#83a598"
+    -- magenta:    = "#d3869b"
+    -- cyan:       = "#8ec07c"
+    -- white:      = "#ebdbb2"
 
+local gears = require("gears")
+local lain  = require("lain")
+local awful = require("awful")
+local wibox = require("wibox")
 local theme_assets = require("beautiful.theme_assets")
 local xresources = require("beautiful.xresources")
 local dpi = xresources.apply_dpi
@@ -22,22 +41,22 @@ local theme = {}
 
 theme.font          = "mononoki Nerd Font 10"
 
-theme.bg_normal     = "#222222"
-theme.bg_focus      = "#535d6c"
-theme.bg_urgent     = "#ff0000"
-theme.bg_minimize   = "#444444"
-theme.bg_systray    = theme.bg_normal
+theme.bg_normal     = "#282828"
+theme.bg_focus      = "#928374"
+theme.bg_urgent     = "#cc241d"
+theme.bg_minimize   = "#83a598"
+theme.bg_systray    = "#d79921"
 
-theme.fg_normal     = "#aaaaaa"
-theme.fg_focus      = "#ffffff"
-theme.fg_urgent     = "#ffffff"
-theme.fg_minimize   = "#ffffff"
+theme.fg_normal     = "#ebdbb2"
+theme.fg_focus      = "#282828"
+theme.fg_urgent     = "#ebdbb2"
+theme.fg_minimize   = "#282828"
 
 theme.useless_gap   = dpi(0)
 theme.border_width  = dpi(1)
-theme.border_normal = "#000000"
-theme.border_focus  = "#535d6c"
-theme.border_marked = "#91231c"
+theme.border_normal = "#282828"
+theme.border_focus  = "#83a598"
+theme.border_marked = "#cc241d"
 
 -- There are other variable sets
 -- overriding the default one when
