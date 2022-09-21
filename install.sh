@@ -47,6 +47,10 @@ echo "Downloading Mononoki Nerdfont"
 mkdir -p $USERDIR/.local/share/fonts
 wget https://github.com/madmalik/mononoki/releases/download/1.3/mononoki.zip -O $USERDIR/Downloads/mononoki.zip
 unzip $USERDIR/Downloads/mononoki.zip -d $USERDIR/.local/share/fonts/mononoki
+echo "Downloading Creattion-Demo"
+mkdir -p $USERDIR/.local/share/fonts
+wget https://www.1001fonts.com/download/creattion-demo.zip -O $USERDIR/Downloads/creattion-demo.zip
+unzip $USERDIR/Downloads/creattion-demo.zip -d $USERDIR/.local/share/fonts/creattion-demo
 echo "Updating font cache"
 fc-cache
 
