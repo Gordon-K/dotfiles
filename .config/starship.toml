@@ -144,9 +144,9 @@ style = "bg:#b16286 fg:#282828"
 format = '[ $symbol $context ]($style) $path'
 
 [battery]
-full_symbol = "  "
-charging_symbol = "  "
-discharging_symbol = "  "
+full_symbol = "  |"
+charging_symbol = "  |"
+discharging_symbol = "  |"
 format = "[$symbol$percentage]()"
 
 [[battery.display]]  # "bold red" style when capacity is between 0% and 10%
@@ -160,5 +160,5 @@ threshold = 100
 
 [time]
 disabled = false
-time_format = "| %R" # Hour:Minute Format
+time_format = " %R" # Hour:Minute Format
 format = '[ $time ]()'
