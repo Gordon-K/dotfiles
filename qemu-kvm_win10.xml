@@ -1,6 +1,6 @@
 <domain type="kvm">
   <name>win10</name>
-  <uuid>c442ba10-a1d2-4b50-9dec-d1e77ac7e538</uuid>
+  <uuid>92156b37-4e63-4212-8c76-7d52473e94ad</uuid>
   <metadata>
     <libosinfo:libosinfo xmlns:libosinfo="http://libosinfo.org/xmlns/libvirt/domain/1.0">
       <libosinfo:os id="http://microsoft.com/win/10"/>
@@ -21,7 +21,19 @@
       <relaxed state="on"/>
       <vapic state="on"/>
       <spinlocks state="on" retries="8191"/>
-      <vendor_id state="on" value="whatever"/>
+      <vpindex state="on"/>
+      <runtime state="on"/>
+      <synic state="on"/>
+      <stimer state="on">
+        <direct state="on"/>
+      </stimer>
+      <reset state="on"/>
+      <vendor_id state="on" value="other"/>
+      <frequencies state="on"/>
+      <reenlightenment state="on"/>
+      <tlbflush state="on"/>
+      <ipi state="on"/>
+      <evmcs state="off"/>
     </hyperv>
     <kvm>
       <hidden state="on"/>
@@ -142,7 +154,7 @@
       <address type="pci" domain="0x0000" bus="0x03" slot="0x00" function="0x0"/>
     </controller>
     <interface type="network">
-      <mac address="52:54:00:47:dc:ac"/>
+      <mac address="52:54:00:4a:88:e5"/>
       <source network="default"/>
       <model type="e1000e"/>
       <address type="pci" domain="0x0000" bus="0x01" slot="0x00" function="0x0"/>
@@ -201,9 +213,6 @@
     <redirdev bus="usb" type="spicevmc">
       <address type="usb" bus="0" port="3"/>
     </redirdev>
-    <memballoon model="virtio">
-      <address type="pci" domain="0x0000" bus="0x06" slot="0x00" function="0x0"/>
-    </memballoon>
+    <memballoon model="none"/>
   </devices>
 </domain>
-
