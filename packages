@@ -77,7 +77,6 @@ bluez-utils
 # Display
 redshift
 brightnessctl
-picom
 arandr
 
 # Filemanger
@@ -86,3 +85,8 @@ ueberzug
 
 # Misc
 unzip
+
+# Virtualization
+qemu
+virt-manager
+libvirt
