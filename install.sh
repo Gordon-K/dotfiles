@@ -22,13 +22,13 @@ echo "Installing packages with pacman"
 sudo pacman -Syu
 rm $USERDIR/Downloads/package_list.txt
 for package in ${PACKAGES[@]}
-do 
+do
   sudo pacman -S $package --needed --noconfirm
 done
 
 echo "Copying over Manjaro zsh config"
-cp -r zsh /usr/share/
-cp -r zsh-theme-powerlevel10k /usr/share/
+sudo cp -r zsh /usr/share/
+sudo cp -r zsh-theme-powerlevel10k /usr/share/
 echo "Overwritting zshrc"
 cp .zshrc ~/
 
@@ -46,6 +46,7 @@ echo "Creating Downloads directory"
 mkdir -p $USERDIR/Downloads
 
 echo "Installing yay"
+cd $USERDIR/Downloads
 git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
@@ -53,14 +54,23 @@ makepkg -si
 echo "Installing powerlevel10k"
 yay -S --noconfirm zsh-theme-powerlevel10k-git
 
-echo "Installing git repos"
-# Mononoki Nerdfont
-echo "Downloading Mononoki Nerdfont"
-mkdir -p $USERDIR/.local/share/fonts
-wget https://github.com/madmalik/mononoki/releases/download/1.3/mononoki.zip -O $USERDIR/Downloads/mononoki.zip
-unzip $USERDIR/Downloads/mononoki.zip -d $USERDIR/.local/share/fonts/mononoki
+echo "Installing fonts"
+cd /usr/share/fonts/
+sudo mkdir MesloLGS
+cd MesloLGS
+sudo wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf
+sudo wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf
+sudo wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf
+sudo wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf
 echo "Updating font cache"
 fc-cache -vf
+
+echo "Updating libvirtd.conf"
+sed 's/#unix_sock_group = "libvirt"/unix_sock_group = "libvirt"/' /etc/libvirt/libvirtd.conf
+sed 's/#unix_sock_rw_perms = "0770"/unix_sock_rw_perms = "0770"/' /etc/libvirt/libvirtd.conf
+
+echo "Adding $USER to libvirt group"
+sudo usermod -a -G libvirt $USER
 
 echo "Starting libvertd"
 systemctl start libvirtd
