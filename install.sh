@@ -66,8 +66,8 @@ echo "Updating font cache"
 fc-cache -vf
 
 echo "Updating libvirtd.conf"
-sudo sed 's/#unix_sock_group = "libvirt"/unix_sock_group = "libvirt"/' /etc/libvirt/libvirtd.conf
-sudo sed 's/#unix_sock_rw_perms = "0770"/unix_sock_rw_perms = "0770"/' /etc/libvirt/libvirtd.conf
+sudo sed -i 's/#.unix_sock_group/unix_sock_group/' /etc/libvirt/libvirtd.conf
+sudo sed -i 's/#.unix_sock_rw_perms/unix_sock_rw_perms/' /etc/libvirt/libvirtd.conf
 
 echo "Adding $USER to libvirt group"
 sudo usermod -a -G libvirt $USER
