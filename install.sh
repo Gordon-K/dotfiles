@@ -62,6 +62,10 @@ unzip $USERDIR/Downloads/mononoki.zip -d $USERDIR/.local/share/fonts/mononoki
 echo "Updating font cache"
 fc-cache -vf
 
+echo "Starting libvertd"
+systemctl start libvirtd
+systemctl enable libvirtd
+
 # AwesomeWM Lain
 rm -rf $USERDIR/.config/awesome/lain
 git clone https://github.com/lcpz/lain.git $USERDIR/.config/awesome/lain
