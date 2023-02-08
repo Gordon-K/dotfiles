@@ -12,3 +12,7 @@ fi
 
 alias ll="ls -la"
 alias l="ls"
+
+if [ -z "$DISPLAY" -a $XDG_VTNR -eq 1 ]; then
+    startx
+fi
