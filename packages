@@ -34,6 +34,7 @@ htop
 # Web Browser
 firefox
 vivaldi
+vivaldi-ffmpeg-codecs
 
 # Gaming
 steam
@@ -90,3 +91,4 @@ unzip
 qemu
 virt-manager
 libvirt
+dnsmasq
