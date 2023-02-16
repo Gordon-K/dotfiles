@@ -1,6 +1,6 @@
 <domain type="kvm">
   <name>win10</name>
-  <uuid>92156b37-4e63-4212-8c76-7d52473e94ad</uuid>
+  <uuid>ff23831f-baa1-4103-a0b7-fddd80859efa</uuid>
   <metadata>
     <libosinfo:libosinfo xmlns:libosinfo="http://libosinfo.org/xmlns/libvirt/domain/1.0">
       <libosinfo:os id="http://microsoft.com/win/10"/>
@@ -12,7 +12,6 @@
   <os firmware="efi">
     <type arch="x86_64" machine="pc-q35-7.0">hvm</type>
     <boot dev="hd"/>
-    <smbios mode="host"/>
   </os>
   <features>
     <acpi/>
@@ -182,10 +181,7 @@
       <audio id="1"/>
       <address type="pci" domain="0x0000" bus="0x10" slot="0x01" function="0x0"/>
     </sound>
-    <audio id="1" type="pulseaudio" serverName="/run/user/1000/pulse/native">
-      <input mixingEngine="no"/>
-      <output mixingEngine="no"/>
-    </audio>
+    <audio id="1" type="spice"/>
     <video>
       <model type="none"/>
     </video>
